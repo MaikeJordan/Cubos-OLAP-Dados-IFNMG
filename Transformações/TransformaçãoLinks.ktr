@@ -410,7 +410,11 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+<<<<<<< HEAD
       <xloc>568</xloc>
+=======
+      <xloc>591</xloc>
+>>>>>>> 4daa95e6c491a13104a32f8872208d27a074f4b8
       <yloc>286</yloc>
       <draw>Y</draw>
       </GUI>
@@ -859,8 +863,13 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+<<<<<<< HEAD
       <xloc>300</xloc>
       <yloc>286</yloc>
+=======
+      <xloc>293</xloc>
+      <yloc>270</yloc>
+>>>>>>> 4daa95e6c491a13104a32f8872208d27a074f4b8
       <draw>Y</draw>
       </GUI>
     </step>
