@@ -12,7 +12,6 @@
     <parameters>
     </parameters>
   <connection>
-<<<<<<< HEAD
     <name>ConexaoIFNMG</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
@@ -21,38 +20,16 @@
     <port>5432</port>
     <username>postgres</username>
     <password>Encrypted 2be98afc86aa7f2e4cb79ce7ddf9ba4df</password>
-=======
-    <name>conexao</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>datawarehouseifnmg</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted </password>
->>>>>>> a0850c1cb702f50e525430a44ade7c905d7d9ff5
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-<<<<<<< HEAD
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-=======
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
->>>>>>> a0850c1cb702f50e525430a44ade7c905d7d9ff5
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
@@ -101,39 +78,27 @@
       <yloc>60</yloc>
       </entry>
     <entry>
-      <name>Evaluate rows number in a table</name>
+      <name>Enquanto houver links</name>
       <description/>
       <type>EVAL_TABLE_CONTENT</type>
-<<<<<<< HEAD
       <connection>ConexaoIFNMG</connection>
-=======
-      <connection>conexao</connection>
->>>>>>> a0850c1cb702f50e525430a44ade7c905d7d9ff5
       <schemaname/>
       <tablename>links</tablename>
       <success_condition>rows_count_greater</success_condition>
       <limit>0</limit>
       <is_custom_sql>Y</is_custom_sql>
       <is_usevars>N</is_usevars>
-<<<<<<< HEAD
       <custom_sql>SELECT url,status FROM links WHERE status &#x3d; false or status is null</custom_sql>
-=======
-      <custom_sql>SELECT url,status FROM links WHERE status &#x3d; 0 or status is null</custom_sql>
->>>>>>> a0850c1cb702f50e525430a44ade7c905d7d9ff5
       <add_rows_result>N</add_rows_result>
       <clear_result_rows>Y</clear_result_rows>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-<<<<<<< HEAD
-      <xloc>275</xloc>
-=======
-      <xloc>273</xloc>
->>>>>>> a0850c1cb702f50e525430a44ade7c905d7d9ff5
-      <yloc>54</yloc>
+      <xloc>288</xloc>
+      <yloc>56</yloc>
       </entry>
     <entry>
-      <name>Transformation</name>
+      <name>Crawler - Processar Links</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -166,16 +131,6 @@
       <yloc>54</yloc>
       </entry>
     <entry>
-      <name>Success</name>
-      <description/>
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>276</xloc>
-      <yloc>203</yloc>
-      </entry>
-    <entry>
       <name>Mail</name>
       <description/>
       <type>MAIL</type>
@@ -205,11 +160,7 @@
       <priority>normal</priority>
       <importance>normal</importance>
       <sensitivity>normal</sensitivity>
-<<<<<<< HEAD
       <secureconnectiontype>TLS</secureconnectiontype>
-=======
-      <secureconnectiontype>SSL</secureconnectiontype>
->>>>>>> a0850c1cb702f50e525430a44ade7c905d7d9ff5
       <replyToAddresses/>
       <filetypes>        <filetype>GENERAL</filetype>
         <filetype>LOG</filetype>
@@ -221,14 +172,78 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>534</xloc>
-      <yloc>186</yloc>
+      <xloc>789</xloc>
+      <yloc>111</yloc>
+      </entry>
+    <entry>
+      <name>Crawler - Processar documentos</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;Transforma&#xe7;&#xe3;oDS_DOCUMENTO.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>529</xloc>
+      <yloc>190</yloc>
+      </entry>
+    <entry>
+      <name>Enquanto houver documentos</name>
+      <description/>
+      <type>EVAL_TABLE_CONTENT</type>
+      <connection>ConexaoIFNMG</connection>
+      <schemaname/>
+      <tablename/>
+      <success_condition>rows_count_greater</success_condition>
+      <limit>0</limit>
+      <is_custom_sql>N</is_custom_sql>
+      <is_usevars>N</is_usevars>
+      <custom_sql/>
+      <add_rows_result>N</add_rows_result>
+      <clear_result_rows>Y</clear_result_rows>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>293</xloc>
+      <yloc>190</yloc>
+      </entry>
+    <entry>
+      <name>Abort job</name>
+      <description/>
+      <type>ABORT</type>
+      <message/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>886</xloc>
+      <yloc>112</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>Evaluate rows number in a table</to>
+      <to>Enquanto houver links</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -236,8 +251,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Evaluate rows number in a table</from>
-      <to>Transformation</to>
+      <from>Enquanto houver links</from>
+      <to>Crawler - Processar Links</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -245,8 +260,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Transformation</from>
-      <to>Evaluate rows number in a table</to>
+      <from>Crawler - Processar Links</from>
+      <to>Enquanto houver links</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -254,22 +269,58 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Evaluate rows number in a table</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Transformation</from>
+      <from>Crawler - Processar Links</from>
       <to>Mail</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Enquanto houver links</from>
+      <to>Enquanto houver documentos</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Enquanto houver documentos</from>
+      <to>Crawler - Processar documentos</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Crawler - Processar documentos</from>
+      <to>Enquanto houver documentos</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Crawler - Processar documentos</from>
+      <to>Mail</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Mail</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
