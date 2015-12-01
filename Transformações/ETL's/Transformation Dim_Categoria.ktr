@@ -89,36 +89,10 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Table input</from><to>Dimension lookup&#x2f;update</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input - ds_documento</from><to>Dimension lookup&#x2f;update &#x28;dim_categoriadespesa&#x29;</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Table input</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>IFNMG</connection>
-    <sql>SELECT distinct categoriadespesa FROM ds_documento</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>141</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Dimension lookup&#x2f;update</name>
+    <name>Dimension lookup&#x2f;update &#x28;dim_categoriadespesa&#x29;</name>
     <type>DimensionLookup</type>
     <description/>
     <distribute>Y</distribute>
@@ -161,7 +135,33 @@
       <start_date_field_name/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>313</xloc>
+      <xloc>365</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input - ds_documento</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>IFNMG</connection>
+    <sql>SELECT distinct categoriadespesa FROM ds_documento</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>141</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
       </GUI>

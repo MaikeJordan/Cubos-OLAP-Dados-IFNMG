@@ -135,7 +135,7 @@
   <hop> <from>HTTP Client</from><to>Split field to rows &#x28;GRUPODESPESA&#x29;</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Filter rows - 6</name>
+    <name>Filter rows - 1</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -150,44 +150,15 @@
     <compare>
 <condition>
  <negated>Y</negated>
- <leftvalue>Numero_Doc</leftvalue>
+ <leftvalue>ElementoDespesa</leftvalue>
  <function>STARTS WITH</function>
  <rightvalue/>
  <value><name>constant</name><type>String</type><text>&#x3c;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>617</xloc>
-      <yloc>443</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filter rows - 5</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Multiway Merge Join</send_true_to>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>Y</negated>
- <leftvalue>ObsDoc</leftvalue>
- <function>STARTS WITH</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>&#x3c;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>617</xloc>
-      <yloc>377</yloc>
+      <xloc>621</xloc>
+      <yloc>108</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -222,7 +193,7 @@
     </step>
 
   <step>
-    <name>Filter rows - 1</name>
+    <name>Filter rows - 3</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -237,7 +208,7 @@
     <compare>
 <condition>
  <negated>Y</negated>
- <leftvalue>ElementoDespesa</leftvalue>
+ <leftvalue>CategoriaDespesa</leftvalue>
  <function>STARTS WITH</function>
  <rightvalue/>
  <value><name>constant</name><type>String</type><text>&#x3c;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
@@ -245,7 +216,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>621</xloc>
-      <yloc>108</yloc>
+      <yloc>243</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -280,7 +251,7 @@
     </step>
 
   <step>
-    <name>Filter rows - 3</name>
+    <name>Filter rows - 5</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -295,15 +266,73 @@
     <compare>
 <condition>
  <negated>Y</negated>
- <leftvalue>CategoriaDespesa</leftvalue>
+ <leftvalue>ObsDoc</leftvalue>
  <function>STARTS WITH</function>
  <rightvalue/>
  <value><name>constant</name><type>String</type><text>&#x3c;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>621</xloc>
-      <yloc>243</yloc>
+      <xloc>617</xloc>
+      <yloc>377</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows - 6</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Multiway Merge Join</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>Y</negated>
+ <leftvalue>Numero_Doc</leftvalue>
+ <function>STARTS WITH</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>&#x3c;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>617</xloc>
+      <yloc>443</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows - 7</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Multiway Merge Join</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>Y</negated>
+ <leftvalue>Valor</leftvalue>
+ <function>STARTS WITH</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>&#x3c;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>612</xloc>
+      <yloc>506</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -340,8 +369,8 @@
     <last_time_field>FiveSecondsAgo</last_time_field>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>15</xloc>
-      <yloc>277</yloc>
+      <xloc>34</xloc>
+      <yloc>295</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -383,6 +412,43 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>125</xloc>
       <yloc>295</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Multiway Merge Join</name>
+    <type>MultiwayMergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>INNER</join_type>
+<step0>Filter rows - 1</step0>
+<step1>Filter rows - 2</step1>
+<step2>Filter rows - 3</step2>
+<step3>Filter rows - 4</step3>
+<step4>Filter rows - 5</step4>
+<step5>Filter rows - 6</step5>
+<step6>Filter rows - 7</step6>
+    <number_input>7</number_input>
+    <keys>
+      <key>Pagina</key>
+      <key>Pagina</key>
+      <key>Pagina</key>
+      <key>Pagina</key>
+      <key>Pagina</key>
+      <key>Pagina</key>
+      <key>Pagina</key>
+    </keys>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>773</xloc>
+      <yloc>319</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -511,6 +577,38 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>525</xloc>
       <yloc>242</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string 7</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Valor</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#x3c;td colspan&#x3d;&#x22;3&#x22;&#x3e;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>528</xloc>
+      <yloc>508</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -752,6 +850,40 @@
     </step>
 
   <step>
+    <name>Split Fields 9</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>Valor</splitfield>
+   <delimiter>&#x3c;&#x2f;td&#x3e;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>Valor</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>left</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>424</xloc>
+      <yloc>509</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Split field to rows &#x28;CATEGORIA&#x29;</name>
     <type>SplitFieldToRows3</type>
     <description/>
@@ -882,6 +1014,32 @@
     </step>
 
   <step>
+    <name>Split field to rows &#x28;VALOR&#x29;</name>
+    <type>SplitFieldToRows3</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>Pagina</splitfield>
+   <delimiter>Valor&#x3a;&#x3c;&#x2f;td&#x3e;</delimiter>
+   <newfield>Valor</newfield>
+   <rownum>N</rownum>
+   <rownum_field/>
+   <resetrownumber>Y</resetrownumber>
+   <delimiter_is_regex>N</delimiter_is_regex>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>289</xloc>
+      <yloc>510</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Split field to rows - Num_Doc</name>
     <type>SplitFieldToRows3</type>
     <description/>
@@ -967,165 +1125,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>939</xloc>
-      <yloc>319</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filter rows - 7</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Multiway Merge Join</send_true_to>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>Y</negated>
- <leftvalue>Valor</leftvalue>
- <function>STARTS WITH</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text>&#x3c;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>612</xloc>
-      <yloc>506</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Replace in string 7</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>Valor</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>&#x3c;td colspan&#x3d;&#x22;3&#x22;&#x3e;</replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>528</xloc>
-      <yloc>508</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Split Fields 9</name>
-    <type>FieldSplitter</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-   <splitfield>Valor</splitfield>
-   <delimiter>&#x3c;&#x2f;td&#x3e;</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>Valor</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>left</trimtype>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>424</xloc>
-      <yloc>509</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Split field to rows &#x28;VALOR&#x29;</name>
-    <type>SplitFieldToRows3</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-   <splitfield>Pagina</splitfield>
-   <delimiter>Valor&#x3a;&#x3c;&#x2f;td&#x3e;</delimiter>
-   <newfield>Valor</newfield>
-   <rownum>N</rownum>
-   <rownum_field/>
-   <resetrownumber>Y</resetrownumber>
-   <delimiter_is_regex>N</delimiter_is_regex>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>289</xloc>
-      <yloc>510</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Multiway Merge Join</name>
-    <type>MultiwayMergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>INNER</join_type>
-<step0>Filter rows - 1</step0>
-<step1>Filter rows - 2</step1>
-<step2>Filter rows - 3</step2>
-<step3>Filter rows - 4</step3>
-<step4>Filter rows - 5</step4>
-<step5>Filter rows - 6</step5>
-<step6>Filter rows - 7</step6>
-    <number_input>7</number_input>
-    <keys>
-      <key>Pagina</key>
-      <key>Pagina</key>
-      <key>Pagina</key>
-      <key>Pagina</key>
-      <key>Pagina</key>
-      <key>Pagina</key>
-      <key>Pagina</key>
-    </keys>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>773</xloc>
+      <xloc>895</xloc>
       <yloc>319</yloc>
       <draw>Y</draw>
       </GUI>

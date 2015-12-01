@@ -109,7 +109,7 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>718</xloc>
+      <xloc>685</xloc>
       <yloc>223</yloc>
       <draw>Y</draw>
       </GUI>
@@ -147,8 +147,8 @@
     <last_time_field>FiveSecondsAgo</last_time_field>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>94</xloc>
-      <yloc>70</yloc>
+      <xloc>96</xloc>
+      <yloc>117</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -322,7 +322,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>895</xloc>
+      <xloc>855</xloc>
       <yloc>223</yloc>
       <draw>Y</draw>
       </GUI>
